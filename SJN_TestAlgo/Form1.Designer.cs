@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pnlContainer = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(667, 410);
+            this.pnlContainer.TabIndex = 19;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(667, 410);
+            this.Controls.Add(this.pnlContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IsMdiContainer = true;
+            this.Name = "Form1";
+            this.Text = " ";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlContainer;
     }
 }
 
