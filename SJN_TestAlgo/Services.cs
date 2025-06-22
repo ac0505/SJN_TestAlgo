@@ -19,7 +19,7 @@ namespace SJN_TestAlgo
         {
             InitializeComponent();
         }
-        
+
         private void btnProceed_Click(object sender, EventArgs e)
         {
             Form1 form = this.FindForm() as Form1;
@@ -28,7 +28,7 @@ namespace SJN_TestAlgo
             {
                 List<CarService> selectedServices = new List<CarService>();
 
-                // check services
+                // Check selected services
                 if (chkOilChange.Checked)
                 {
                     selectedServices.Add(new CarService("Oil Change", 25));
@@ -53,18 +53,17 @@ namespace SJN_TestAlgo
                 {
                     selectedServices.Add(new CarService("Car Wash", 15));
                 }
-                Execution execution = new Execution(selectedServices);
 
-                // apply SJN process
+                // Apply SJN (Shortest Job Next) sorting by duration
                 var sortedBySJN = selectedServices.OrderBy(s => s.Duration).ToList();
 
-                // Clear and load new user control
+                // Load Execution screen with sorted services
+                Execution execution = new Execution(sortedBySJN);
+
                 form.ContainerPanel.Controls.Clear();
                 execution.Dock = DockStyle.Fill;
-
                 form.ContainerPanel.Controls.Add(execution);
             }
-
         }
     }
 }
